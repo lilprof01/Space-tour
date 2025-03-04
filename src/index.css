@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Syne Mono", serif;;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.hero{
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-size: cover;
+}
+
+/* logo animation */
+.logo:hover{
+  animation: rotate 5s ease-in-out forwards;
+}
+
+@keyframes rotate{
+  0%, 100%{
+    rotate: 0;
+  }
+  50%{
+    rotate: 360deg;
+    scale: 1.5;
+  }
+}
+
+/* nav styles and animation */
+nav ul{
+  text-wrap: nowrap;
+}
+
+.nav-container{
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.nav-links{
+  position: relative;
+}
+
+.nav-links.active::before{
+  visibility: visible;
+}
+
+.nav-links.active:hover::before{
+  animation: none;
+}
+
+.nav-links::before{
+  content: '';
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.nav-links:hover{
+  cursor: pointer;
+}
+
+.nav-links:hover::before{
+  visibility: visible;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0%, 100%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 1;
+  }
+}
+
+/* mobile nav styles and animation */
+.mobile-nav{
+  /* background-color: rgba(255, 255, 255, 0.285); */
+  backdrop-filter: blur(50px);
+  z-index: 10;
+}
+
+.mobile-links{
+  position: relative;
+}
+
+.mobile-links::before{
+  content: '';
+  height: 100%;
+  width: 5px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+.mobile-links:hover::before{
+  visibility: visible;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.mobile-links.active::before{
+  visibility: visible;
+}
+
+.open-nav{
+  display: flex;
+  animation: open 1s ease-in-out forwards;
+}
+
+.close-nav{
+  animation: close 1s ease-in-out forwards;
+}
+
+@keyframes open{
+  from{
+    transform: translateX(100%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes close{
+  from{
+    display: flex;
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(100%);
+    display: none;
+  }
+}
+
+/* hamburger animation */
+.burger1{
+  animation: down-rotate 1s ease-out forwards;
+}
+
+@keyframes down-rotate{
+  0%{
+    margin-bottom: 6px;
+  }
+  100%{
+    margin-bottom: -3px;
+    rotate: 45deg;
+    width: 32px;
+  }
+}
+
+.burger2{
+  animation: up-rotate 1s ease-out forwards;
+}
+
+@keyframes up-rotate{
+  0%{
+    margin-top: 6px;
+  }
+  100%{
+    margin-top: -6px;
+    rotate: -45deg;
+    width: 32px;
+  }
+}
+
+.burger-1{
+  animation: down-rotate-off 1s ease-out forwards;
+}
+
+@keyframes down-rotate-off{
+  0%{
+    margin-bottom: -6px;
+    rotate: 45deg;
+    width: 32px;
+  }
+  100%{
+    margin-bottom: 6px;
+    width: 48px;
+  }
+}
+
+.burger-2{
+  animation: up-rotate-off 1s ease-out forwards;
+}
+
+@keyframes up-rotate-off{
+  0%{
+    margin-top: -6px;
+    rotate: -45deg;
+  }
+  100%{
+    margin-top: 6px;
+    width: 24px;
+  }
+}
+
+.show{
+  animation: return 1.5s ease-out;
+}
+
+@keyframes return{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* Home styles and animation */
+.space{
+  font-family: "Syne Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fancy-button{
+  position: relative;
+  z-index: 1;
+}
+
+.fancy-button::before{
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.21);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  visibility: hidden;
+  transition: visibility 0.15s ease-in-out;
+  z-index: -1;
+}
+
+.fancy-button:hover::before{
+  visibility: visible;
+  animation: beat 2s ease-in-out infinite;
+}
+
+@keyframes beat{
+  0%{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100%{
+    width: 140%;
+    height: 140%;
+    opacity: 0;
+  }
+}
+
+.moon{
+  animation: slideIn 2s ease-in-out, spin 300s ease-out infinite;
+  cursor: pointer;
+}
+
+@keyframes spin{
+  from{
+    rotate: 0;
+  }
+  to{
+    rotate: 360deg;
+  }
+}
+
+@keyframes slideIn{
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
