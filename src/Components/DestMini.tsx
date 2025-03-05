@@ -10,19 +10,23 @@ interface DestMiniProps {
   handleActive: (id: string) => void;
 }
 
-
-const DestMini: React.FC<DestMiniProps> = ({ data, activePage, handleActive }) => {
-
+const DestMini: React.FC<DestMiniProps> = ({
+  data,
+  activePage,
+  handleActive,
+}) => {
   return (
     <section className="flex flex-col justify-center items-start align-middle gap-6">
       <MiniNav activePage={activePage} handleActive={handleActive} />
 
-      {activePage === "moon" && <Moon data={data} />}
-      {activePage === "mars" && <Mars data={data} />}
-      {activePage === "europa" && <Europa data={data} />}
-      {activePage === "titan" && <Titan data={data} />}
+      <div className="w-full">
+        {activePage === "moon" && <Moon data={data} />}
+        {activePage === "mars" && <Mars data={data} />}
+        {activePage === "europa" && <Europa data={data} />}
+        {activePage === "titan" && <Titan data={data} />}
+      </div>
     </section>
-  )
-}
+  );
+};
 
 export default DestMini;

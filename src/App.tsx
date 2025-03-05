@@ -7,33 +7,51 @@ import Home from "./Pages/Home";
 import Destination from "./Pages/Destination";
 import Crew from "./Pages/Crew";
 import Technologies from "./Pages/Technologies";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileNav from "./Components/MobileNav";
 
-
 function App() {
-  const [openNav, setOpenNav] = useState<Boolean>(false)
+  const [openNav, setOpenNav] = useState<Boolean>(false);
+  const [data, setData] = useState<any>(null);
 
   const handleOpenNav = (): void => {
-    setOpenNav((prev) => !prev)
+    setOpenNav((prev) => !prev);
   };
-  
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
+  if (!data) {
+    return (
+      <div
+        style={{
+          // backgroundImage: `url(${bgImg})`,
+        }}
+        className="h-screen w-screen text-5xl text-[#410f0f] absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]"
+      >
+        Loading...
+      </div>
+    );
+  }
 
   return (
-  <Router>
-    <main className="text-white">
-    <Header openNav={openNav} handleOpenNav={handleOpenNav} />
-    <MobileNav openNav={openNav} />
+    <Router>
+      <main className="text-white">
+        <Header openNav={openNav} handleOpenNav={handleOpenNav} />
+        <MobileNav openNav={openNav} />
 
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/destination" element={<Destination />} />
-      <Route path="/crew" element={<Crew />} />
-      <Route path="/technologies" element={<Technologies />} />
-    </Routes>
-  </main>
-  </Router>
-  )
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/destination" element={<Destination data={data} />} />
+          <Route path="/crew" element={<Crew data={data} />} />
+          <Route path="/technologies" element={<Technologies />} />
+        </Routes>
+      </main>
+    </Router>
+  );
 }
 
 export default App;
