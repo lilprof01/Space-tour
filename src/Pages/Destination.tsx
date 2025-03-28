@@ -47,14 +47,44 @@ const Destination: React.FC<DestinationProps> = ({ data }) => {
         </h2>
         <div className="w-full h-full flex flex-col lg:justify-end">
           <div className="w-full h-full flex flex-col lg:flex-row lg:gap-8 justify-center items-center align-middle">
-            <div className={`w-[60%] lg:w-full h-full flex flex-col justify-center text-center lg:text-left items-center lg:items-start align-middle gap-6 relative my-16`}>
-              {activePage === "moon" && <img alt="moon" src={data.destinations[0].images.webp} className="moon" />}
-              {activePage === "mars" && <img alt="mars" src={data.destinations[1].images.webp} className="moon" />}
-              {activePage === "europa" && <img alt="europa" src={data.destinations[2].images.webp} className="moon" />}
-              {activePage === "titan" && <img alt="titan" src={data.destinations[3].images.webp} className="moon" />}
+            <div
+              className={`w-[60%] lg:w-full h-full flex flex-col justify-center text-center lg:text-left items-center lg:items-start align-middle gap-6 relative my-16`}
+            >
+              {activePage === "moon" && (
+                <img
+                  alt="moon"
+                  src={data.destinations[0].images.webp}
+                  className="moon"
+                />
+              )}
+              {activePage === "mars" && (
+                <img
+                  alt="mars"
+                  src={data.destinations[1].images.webp}
+                  className="moon"
+                />
+              )}
+              {activePage === "europa" && (
+                <img
+                  alt="europa"
+                  src={data.destinations[2].images.webp}
+                  className="moon"
+                />
+              )}
+              {activePage === "titan" && (
+                <img
+                  alt="titan"
+                  src={data.destinations[3].images.webp}
+                  className="moon"
+                />
+              )}
             </div>
             <div className="w-full h-full flex justify-center items-center align-middle">
-              <DestMini data={data} activePage={activePage} handleActive={handleActive} />
+              <DestMini
+                data={data}
+                activePage={activePage}
+                handleActive={handleActive}
+              />
             </div>
           </div>
         </div>

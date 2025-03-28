@@ -42,38 +42,106 @@ const Crew: React.FC<CrewProps> = ({ data }) => {
           <h2 className="lg:self-baseline text-xl lg:text-3xl">
             <span className="font-bold">02</span> MEET YOUR CREW
           </h2>
-          {activePage === "commander" && <div className="flex flex-col gap-4 appear">
-            <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">{data.crew[0].role}</h2>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl">{data.crew[0].name}</h1>
-            <p className="text-xl text-blue-100">{data.crew[0].bio}</p>
-          </div>}
-          {activePage === "specialist" && <div className="flex flex-col gap-4 appear">
-            <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">{data.crew[1].role}</h2>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl">{data.crew[1].name}</h1>
-            <p className="text-xl text-blue-100">{data.crew[1].bio}</p>
-          </div>}
-          {activePage === "pilot" && <div className="flex flex-col gap-4 appear">
-            <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">{data.crew[2].role}</h2>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl">{data.crew[2].name}</h1>
-            <p className="text-xl text-blue-100">{data.crew[2].bio}</p>
-          </div>}
-          {activePage === "engineer" && <div className="flex flex-col gap-4 appear">
-            <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">{data.crew[3].role}</h2>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl">{data.crew[3].name}</h1>
-            <p className="text-xl text-blue-100">{data.crew[3].bio}</p>
-          </div>}
+          {activePage === "commander" && (
+            <div className="flex flex-col gap-4 appear">
+              <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">
+                {data.crew[0].role}
+              </h2>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl">
+                {data.crew[0].name}
+              </h1>
+              <p className="text-xl text-blue-100">{data.crew[0].bio}</p>
+            </div>
+          )}
+          {activePage === "specialist" && (
+            <div className="flex flex-col gap-4 appear">
+              <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">
+                {data.crew[1].role}
+              </h2>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl">
+                {data.crew[1].name}
+              </h1>
+              <p className="text-xl text-blue-100">{data.crew[1].bio}</p>
+            </div>
+          )}
+          {activePage === "pilot" && (
+            <div className="flex flex-col gap-4 appear">
+              <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">
+                {data.crew[2].role}
+              </h2>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl">
+                {data.crew[2].name}
+              </h1>
+              <p className="text-xl text-blue-100">{data.crew[2].bio}</p>
+            </div>
+          )}
+          {activePage === "engineer" && (
+            <div className="flex flex-col gap-4 appear">
+              <h2 className="text-xl md:text-2xl lg:text-4xl opacity-60">
+                {data.crew[3].role}
+              </h2>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl">
+                {data.crew[3].name}
+              </h1>
+              <p className="text-xl text-blue-100">{data.crew[3].bio}</p>
+            </div>
+          )}
           <div className="selector-container flex gap-6">
-            <div onClick={() => handleActive("commander")} className={`selector h-4 w-4 lg:h-5 lg:w-5 ${activePage === "commander" ? 'selected' : ''}`}></div>
-            <div onClick={() => handleActive("specialist")} className={`selector h-4 w-4 lg:h-5 lg:w-5 ${activePage === "specialist" ? 'selected' : ''}`}></div>
-            <div onClick={() => handleActive("pilot")} className={`selector h-4 w-4 lg:h-5 lg:w-5 ${activePage === "pilot" ? 'selected' : ''}`}></div>
-            <div onClick={() => handleActive("engineer")} className={`selector h-4 w-4 lg:h-5 lg:w-5 ${activePage === "engineer" ? 'selected' : ''}`}></div>
+            <div
+              onClick={() => handleActive("commander")}
+              className={`selector h-4 w-4 lg:h-5 lg:w-5 ${
+                activePage === "commander" ? "selected" : ""
+              }`}
+            ></div>
+            <div
+              onClick={() => handleActive("specialist")}
+              className={`selector h-4 w-4 lg:h-5 lg:w-5 ${
+                activePage === "specialist" ? "selected" : ""
+              }`}
+            ></div>
+            <div
+              onClick={() => handleActive("pilot")}
+              className={`selector h-4 w-4 lg:h-5 lg:w-5 ${
+                activePage === "pilot" ? "selected" : ""
+              }`}
+            ></div>
+            <div
+              onClick={() => handleActive("engineer")}
+              className={`selector h-4 w-4 lg:h-5 lg:w-5 ${
+                activePage === "engineer" ? "selected" : ""
+              }`}
+            ></div>
           </div>
         </div>
         <div className="w-full 2xl:flex flex-col 2xl:justify-end justify-center items-center align-middle">
-          {activePage === "commander" && <img alt="crew" src={data.crew[0].images.webp} className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear" />}
-          {activePage === "specialist" && <img alt="crew" src={data.crew[1].images.webp} className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear" />}
-          {activePage === "pilot" && <img alt="crew" src={data.crew[2].images.webp} className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear" />}
-          {activePage === "engineer" && <img alt="crew" src={data.crew[3].images.webp} className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear" />}
+          {activePage === "commander" && (
+            <img
+              alt="crew"
+              src={data.crew[0].images.webp}
+              className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear"
+            />
+          )}
+          {activePage === "specialist" && (
+            <img
+              alt="crew"
+              src={data.crew[1].images.webp}
+              className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear"
+            />
+          )}
+          {activePage === "pilot" && (
+            <img
+              alt="crew"
+              src={data.crew[2].images.webp}
+              className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear"
+            />
+          )}
+          {activePage === "engineer" && (
+            <img
+              alt="crew"
+              src={data.crew[3].images.webp}
+              className="h-96 w-96 2xl:w-full 2xl:h-full xl:h-full m-auto appear"
+            />
+          )}
         </div>
       </div>
     </section>

@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne+Mono&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Syne Mono", serif;;
+  font-family: "Syne Mono", serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 
   transition: all 0.3s ease-in-out;
 }
 
-.hero{
+.hero {
   background-position: center;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
@@ -25,44 +24,45 @@
 }
 
 /* logo animation */
-.logo:hover{
+.logo:hover {
   animation: rotate 5s ease-in-out forwards;
 }
 
-@keyframes rotate{
-  0%, 100%{
+@keyframes rotate {
+  0%,
+  100% {
     rotate: 0;
   }
-  50%{
+  50% {
     rotate: 360deg;
     scale: 1.5;
   }
 }
 
 /* nav styles and animation */
-nav ul{
+nav ul {
   text-wrap: nowrap;
 }
 
-.nav-container{
+.nav-container {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
 }
 
-.nav-links{
+.nav-links {
   position: relative;
 }
 
-.nav-links.active::before{
+.nav-links.active::before {
   visibility: visible;
 }
 
-.nav-links.active:hover::before{
+.nav-links.active:hover::before {
   animation: none;
 }
 
-.nav-links::before{
-  content: '';
+.nav-links::before {
+  content: "";
   height: 4px;
   width: 100%;
   background-color: white;
@@ -72,37 +72,38 @@ nav ul{
   visibility: hidden;
 }
 
-.nav-links:hover{
+.nav-links:hover {
   cursor: pointer;
 }
 
-.nav-links:hover::before{
+.nav-links:hover::before {
   visibility: visible;
   animation: pulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse{
-  0%, 100%{
+@keyframes pulse {
+  0%,
+  100% {
     opacity: 0.3;
   }
-  50%{
+  50% {
     opacity: 1;
   }
 }
 
 /* mobile nav styles and animation */
-.mobile-nav{
+.mobile-nav {
   /* background-color: rgba(255, 255, 255, 0.285); */
   backdrop-filter: blur(50px);
   z-index: 10;
 }
 
-.mobile-links{
+.mobile-links {
   position: relative;
 }
 
-.mobile-links::before{
-  content: '';
+.mobile-links::before {
+  content: "";
   height: 100%;
   width: 5px;
   background-color: white;
@@ -112,133 +113,133 @@ nav ul{
   visibility: hidden;
 }
 
-.mobile-links:hover::before{
+.mobile-links:hover::before {
   visibility: visible;
   animation: pulse 2s ease-in-out infinite;
 }
 
-.mobile-links.active::before{
+.mobile-links.active::before {
   visibility: visible;
 }
 
-.open-nav{
+.open-nav {
   display: flex;
   animation: open 1s ease-in-out forwards;
 }
 
-.close-nav{
+.close-nav {
   animation: close 1s ease-in-out forwards;
 }
 
-@keyframes open{
-  from{
+@keyframes open {
+  from {
     transform: translateX(100%);
   }
-  to{
+  to {
     transform: translateX(0);
   }
 }
 
-@keyframes close{
-  from{
+@keyframes close {
+  from {
     display: flex;
     transform: translateX(0);
   }
-  to{
+  to {
     transform: translateX(100%);
     display: none;
   }
 }
 
 /* hamburger animation */
-.burger1{
+.burger1 {
   animation: down-rotate 1s ease-out forwards;
 }
 
-@keyframes down-rotate{
-  0%{
+@keyframes down-rotate {
+  0% {
     margin-bottom: 6px;
   }
-  100%{
+  100% {
     margin-bottom: -3px;
     rotate: 45deg;
     width: 32px;
   }
 }
 
-.burger2{
+.burger2 {
   animation: up-rotate 1s ease-out forwards;
 }
 
-@keyframes up-rotate{
-  0%{
+@keyframes up-rotate {
+  0% {
     margin-top: 6px;
   }
-  100%{
+  100% {
     margin-top: -6px;
     rotate: -45deg;
     width: 32px;
   }
 }
 
-.burger-1{
+.burger-1 {
   animation: down-rotate-off 1s ease-out forwards;
 }
 
-@keyframes down-rotate-off{
-  0%{
+@keyframes down-rotate-off {
+  0% {
     margin-bottom: -6px;
     rotate: 45deg;
     width: 32px;
   }
-  100%{
+  100% {
     margin-bottom: 6px;
     width: 48px;
   }
 }
 
-.burger-2{
+.burger-2 {
   animation: up-rotate-off 1s ease-out forwards;
 }
 
-@keyframes up-rotate-off{
-  0%{
+@keyframes up-rotate-off {
+  0% {
     margin-top: -6px;
     rotate: -45deg;
   }
-  100%{
+  100% {
     margin-top: 6px;
     width: 24px;
   }
 }
 
-.show{
+.show {
   animation: return 1.5s ease-out;
 }
 
-@keyframes return{
-  0%{
+@keyframes return {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
 /* Home styles and animation */
-.space{
+.space {
   font-family: "Syne Mono", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.fancy-button{
+.fancy-button {
   position: relative;
   z-index: 1;
 }
 
-.fancy-button::before{
-  content: '';
+.fancy-button::before {
+  content: "";
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.21);
@@ -252,51 +253,51 @@ nav ul{
   z-index: -1;
 }
 
-.fancy-button:hover::before{
+.fancy-button:hover::before {
   visibility: visible;
   animation: beat 2s ease-in-out infinite;
 }
 
-@keyframes beat{
-  0%{
+@keyframes beat {
+  0% {
     width: 100%;
     height: 100%;
     opacity: 1;
   }
-  100%{
+  100% {
     width: 140%;
     height: 140%;
     opacity: 0;
   }
 }
 
-.moon{
+.moon {
   animation: slideIn 2s ease-in-out, spin 300s ease-out infinite;
   cursor: pointer;
 }
 
-@keyframes spin{
-  from{
+@keyframes spin {
+  from {
     rotate: 0;
   }
-  to{
+  to {
     rotate: 360deg;
   }
 }
 
-@keyframes slideIn{
-  0%{
+@keyframes slideIn {
+  0% {
     transform: translateX(-100%);
     opacity: 0;
   }
-  100%{
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
 /* crew styles and animation */
-.selector{
+.selector {
   background-color: white;
   border-radius: 100%;
   opacity: 0.3;
@@ -304,27 +305,27 @@ nav ul{
   transition: opacity 0.3s ease-in-out;
 }
 
-.selector:hover{
+.selector:hover {
   opacity: 0.6;
 }
 
-.selected{
+.selected {
   opacity: 1;
 }
 
-.selected:hover{
+.selected:hover {
   opacity: 1;
 }
 
-.appear{
+.appear {
   animation: appear 1s ease-in-out;
 }
 
-@keyframes appear{
-  0%{
+@keyframes appear {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }

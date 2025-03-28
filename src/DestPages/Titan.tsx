@@ -8,8 +8,7 @@ const Titan: React.FC<TitanProps> = ({ data }) => {
       {/* Details div */}
       <div className="py-2 border-b border-[grey]">
         <h2 className="text-8xl 2xl:text-9xl">{data.destinations[3].name}</h2>
-        <p className="text-[16px]">{data.destinations[3].description}
-        </p>
+        <p className="text-[16px]">{data.destinations[3].description}</p>
       </div>
 
       {/* distance and days div */}

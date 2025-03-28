@@ -26,12 +26,7 @@ function App() {
 
   if (!data) {
     return (
-      <div
-        style={{
-          // backgroundImage: `url(${bgImg})`,
-        }}
-        className="h-screen w-screen text-5xl text-[#410f0f] absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]"
-      >
+      <div className="h-screen w-screen bg-black text-5xl text-[grey] absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]">
         Loading...
       </div>
     );
@@ -41,7 +36,7 @@ function App() {
     <Router>
       <main className="text-white">
         <Header openNav={openNav} handleOpenNav={handleOpenNav} />
-        <MobileNav openNav={openNav} />
+        <MobileNav openNav={openNav} setOpenNav={setOpenNav} />
 
         <Routes>
           <Route path="/" element={<Home />} />
