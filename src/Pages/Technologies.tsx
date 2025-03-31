@@ -108,7 +108,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ data }) => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-            className="h-full w-full bg-[blue]"
+            className="h-full w-full"
           ></div>
         )}
         {activePage === "second" && (
@@ -130,7 +130,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ data }) => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-            className="h-full w-full bg-[blue]"
+            className="h-full w-full"
           ></div>
         )}
       </div>
